@@ -6,7 +6,7 @@ const Form = () => {
   const [phoneState, setPhoneState] = useState('');
   const [messageState, setMessageState] = useState('');
   const [urlState, setUrlState] = useState('');
-	const [copyState, setCopyState] = useState('Copy to clipboard');
+	const [copyState, setCopyState] = useState('Copiar Link');
   
   const handleSubmit = e => {
     e.preventDefault();
@@ -15,9 +15,9 @@ const Form = () => {
 
 	const copyToClipboard = (url) => {
     navigator.clipboard.writeText(url);
-		setCopyState('Copied!');
+		setCopyState('Copiado!');
 		setTimeout(() => {
-			setCopyState('Copy to clipboard');
+			setCopyState('Copiar Link');
 		}, 2000);
   };
 
@@ -45,14 +45,14 @@ const Form = () => {
 						<a
 							className="btn waves-effect waves-light teal button-handler"
 							href={url}
-							target="a_blank">Send WhatsApp
+							target="a_blank">Enviar para WhatsApp
 							<i className="material-icons right">open_in_new</i>
 						</a>
 					</div>
 					<div className="col s12 m12">
 						<button
 							className="btn waves-effect waves-light teal accent-1 teal-text button-handler"
-							onClick={() => {clearAll()}}>Clear all
+							onClick={() => {clearAll()}}>Limpar 
 							<i className="material-icons right">clear_all</i>
 						</button>
 					</div>
@@ -67,9 +67,9 @@ const Form = () => {
 				<form onSubmit={e => {handleSubmit(e)}}>
 					<div className="row">
 						<div className="input-field col s12">
-							<h4>Whatsapp Link Generator</h4>
+							<h4>Gerador de Link para Whatsapp</h4>
 							<p className="teal-text margin-negative">
-								Create personalized WhatsApp messages and send them to whoever you want.
+							Crie mensagens personalizadas no WhatsApp e envie para quem você quiser.
 							</p>
 						</div>
 					</div>
@@ -84,10 +84,10 @@ const Form = () => {
 								onChange={e => setPhoneState(e.target.value)}
 								required
 							/>
-							<label htmlFor="phone">Write your phone number here 📱</label>
-							<span className="helper-text">E.g 529831231237
+							<label htmlFor="phone">Escreva seu número aqui 📱</label>
+							<span className="helper-text">(DDD) 0 0000-0000
 								{' '}
-								<span className="teal-text">Don't forget the prefix.</span>
+								<span className="teal-text">Não se esqueça do prefixo.</span>
 							</span>
 						</div>
 					</div>
@@ -102,14 +102,14 @@ const Form = () => {
 								onChange={e => setMessageState(e.target.value)}
 								required
 							/>
-							<label htmlFor="message">Write your message here ✍️</label>
+							<label htmlFor="message">Escreva sua mensagem aqui ✍️</label>
 						</div>
 					</div>
 					<div className="row">
 						<div className="col s12">
 							<button
 								className="btn waves-effect waves-light teal button-handler"
-								type="submit">Generate Link
+								type="submit">Gerar Link
 								<i className="material-icons right">link</i>
 							</button>
 						</div>
