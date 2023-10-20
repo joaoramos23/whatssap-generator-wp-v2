@@ -77,6 +77,7 @@ input[type=number] {
 
 .button-handler {
   margin-bottom: 10px;
+  z-index: auto;
 }
 
 @media (max-width: 660px) {
